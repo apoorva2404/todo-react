@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reduxSaga from 'redux-saga';
-import reducers from './reducers';
- 
+
 import './index.css';
 import App from './App';
+import Store from './store'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducers, {}, applyMiddleware(reduxSaga));
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={Store}>
         <App />
     </Provider>, 
     document.getElementById('root'));
@@ -21,3 +18,7 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+
+
